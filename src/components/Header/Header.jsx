@@ -23,7 +23,7 @@ function Header() {
         {/* LOGO */}
         <div className="header-logo">
           <Link to="/">
-            <img src="../images/LogoUmilux2.png" alt="Umilux" />
+            <img src="../images/LogoUmilux.png" alt="Umilux" />
           </Link>
         </div>
 
@@ -90,7 +90,7 @@ function Header() {
       {/* SEARCH MOBILE */}
       <div className="header-search-mobile">
         <div className="header-search-icon">
-          <img src="../../../public/vector.svg" alt="" />
+          <IoSearch className="header-icon" />
         </div>
         <div className="header-search-bar">
           <input type="text" placeholder="I'm looking for..." />
