@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Badge } from 'antd';
 
 import { IoMenu } from 'react-icons/io5';
+import { IoSearch } from 'react-icons/io5';
 import { IoPersonOutline } from 'react-icons/io5';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { BsCart2 } from 'react-icons/bs';
@@ -22,14 +23,14 @@ function Header() {
         {/* LOGO */}
         <div className="header-logo">
           <Link to="/">
-            <img src="../public/LogoUmilux2.png" alt="Umilux" />
+            <img src="../images/LogoUmilux2.png" alt="Umilux" />
           </Link>
         </div>
 
         {/* SEARCH */}
         <div className="header-search">
           <div className="header-search-icon">
-            <img src="../../../public/vector.svg" alt="" />
+            <IoSearch />
           </div>
           <div className="header-search-bar">
             <input type="text" placeholder="I'm looking for..." />
