@@ -1,0 +1,224 @@
+@import '../../App.scss';
+
+.header-wrapper {
+  background: $white;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+
+    > div {
+      flex: 1;
+    }
+
+    .header-icon {
+      margin: 0 12px;
+      font-size: 32px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .header-menu-mobile {
+      display: flex;
+      align-items: center;
+      display: none;
+
+      .header-icon {
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .header-logo {
+      display: flex;
+      justify-content: flex-start;
+
+      img {
+        width: 145px;
+      }
+    }
+
+    .header-search {
+      flex: 2;
+      position: relative;
+      margin: 0 24px;
+
+      .header-search-icon {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header-search-bar {
+        input {
+          width: 100%;
+          height: 45px;
+          background: $white;
+          color: $text;
+          font-size: 12px;
+          border-radius: 16px;
+          border: 2px solid $blue;
+          padding-left: 45px;
+          padding-right: 110px;
+          outline: none;
+        }
+      }
+
+      .header-search-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .btn {
+          width: 100px;
+          height: 45px;
+          font-size: 15px;
+          line-height: 24.5px;
+          font-weight: 500;
+          padding: 0 10px;
+          background: $blue;
+          color: $white;
+          border-radius: 0 16px 16px 0;
+        }
+      }
+    }
+
+    .header-user {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+
+      .header-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .secondary-action {
+        color: $text;
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      .primary-action {
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+      }
+
+      .header-account,
+      .header-cart {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .header-account,
+      .header-wishlist,
+      .header-cart {
+        cursor: pointer;
+
+        &:hover .header-icon {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  .header-search-mobile {
+    display: none;
+    position: relative;
+    margin: 12px 24px 0 24px;
+
+    .header-search-icon {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-search-bar {
+      input {
+        width: 100%;
+        height: 45px;
+        background: $white;
+        color: $text;
+        font-size: 12px;
+        border-radius: 16px;
+        border: 2px solid $blue;
+        padding-left: 45px;
+        padding-right: 110px;
+        outline: none;
+      }
+    }
+
+    .header-search-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      .btn {
+        width: 100px;
+        height: 45px;
+        font-size: 15px;
+        line-height: 24.5px;
+        font-weight: 500;
+        padding: 0 10px;
+        background: $blue;
+        color: $white;
+        border-radius: 0 16px 16px 0;
+      }
+    }
+  }
+
+  .header-all-menu {
+    border-top: 2px solid #ccc;
+    padding: 0 30px;
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 1024px) {
+  .header-wrapper {
+    .header-container {
+      display: flex;
+      padding-bottom: 0;
+
+      .header-menu-mobile {
+        display: block;
+      }
+
+      .header-logo {
+        justify-content: center;
+      }
+
+      .header-search {
+        display: none;
+      }
+
+      .header-user {
+        .header-account,
+        .header-wishlist {
+          display: none;
+        }
+
+        .header-actions {
+          display: none;
+        }
+      }
+    }
+
+    .header-search-mobile {
+      display: block;
+    }
+  }
+}
