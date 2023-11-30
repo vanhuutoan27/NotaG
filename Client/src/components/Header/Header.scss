@@ -3,30 +3,31 @@
 .header-wrapper {
   background: $white;
 
+  .header-icon {
+    margin: 0 12px;
+    font-size: 32px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
   .header-container {
     display: flex;
     justify-content: space-between;
     padding: 24px 0;
 
-    .header-icon {
-      margin: 0 12px;
-      font-size: 32px;
-      transition: all 0.2s ease-in-out;
-    }
-
     .header-menu-mobile {
       display: flex;
       align-items: center;
       display: none;
-
-      .header-icon {
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-
-        &:hover {
-          color: $blue;
-        }
-      }
     }
 
     .header-logo {
@@ -36,6 +37,15 @@
 
       img {
         width: 145px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &:active {
+          transform: scale(1);
+        }
       }
     }
 
@@ -179,8 +189,76 @@
   }
 
   .header-all-menu {
-    border-top: 2px solid #ccc;
     padding: 0 30px;
+
+    .header-all-menu-container {
+      display: flex;
+      justify-content: space-between;
+      border-top: 2px solid #eee;
+
+      > div {
+        flex: 1;
+        padding: 16px 12px;
+      }
+
+      .header-icon {
+        font-size: 20px;
+        margin-left: 0;
+      }
+
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .header-menu {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .header-categories {
+        flex: 2;
+
+        ul {
+          li {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0;
+            transition: all 0.2s ease-in-out;
+
+            a {
+              padding: 0 12px;
+            }
+
+            &:hover {
+              color: $blue;
+              transform: scale(1.05);
+            }
+
+            &:active {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+
+      .header-recent {
+        display: flex;
+        justify-content: flex-end;
+        transition: all 0.2s ease-in-out;
+
+        .header-menu-icon {
+          font-size: 20px;
+          margin: 0 12px 0 0;
+          cursor: pointer;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
   }
 }
 
@@ -217,6 +295,11 @@
 
     .header-search-mobile {
       display: block;
+      padding-bottom: 24px;
+    }
+
+    .header-all-menu {
+      display: none;
     }
   }
 }

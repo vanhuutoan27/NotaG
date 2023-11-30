@@ -7,6 +7,7 @@ import { IoSearch } from 'react-icons/io5';
 import { IoPersonOutline } from 'react-icons/io5';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { BsCart2 } from 'react-icons/bs';
+import { MdAccessTime } from 'react-icons/md';
 
 import './Header.scss';
 
@@ -102,7 +103,47 @@ function Header() {
 
       {/* ALL MENU */}
       <div className="header-all-menu">
-        <div className="header-menu"></div>
+        <div className="header-all-menu-container content">
+          <div className="header-menu">
+            <IoMenu className="header-icon" />
+            <h3>All Departments</h3>
+          </div>
+
+          <div className="header-categories">
+            <ul>
+              <li>
+                <Link to="#!">Home</Link>
+              </li>
+              <li>
+                <Link to="#!">Shop</Link>
+              </li>
+              <li>
+                <Link to="#!">Product</Link>
+              </li>
+              <li>
+                <Link to="#!">Blog</Link>
+              </li>
+              <li>
+                <Link to="#!">Page</Link>
+              </li>
+              <li>
+                <Link to="#!">Sale</Link>
+              </li>
+              <li>
+                <Link to="#!">Buy Umilux</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="header-recent">
+            <Link to="#!">
+              <MdAccessTime className="header-menu-icon" />
+            </Link>
+            <Link to="#!">
+              <h3>Recently viewed products</h3>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
