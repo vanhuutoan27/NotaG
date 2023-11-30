@@ -28,7 +28,7 @@ We are committed to providing you with the best customer service possible. Here 
 
 We are delighted to serve you. If you have any questions or requests, please feel free to contact us:
 
-- Email: umilux.contact@gmail.com
-- Website: [umilux.vercel.app](umilux.vercel.app)
+- Email: notag.contact@gmail.com
+- Website: [notag.vercel.app](umilux.vercel.app)
 
 Thank you for choosing Umilux for your top-notch tech product shopping. We hope you have an enjoyable and satisfying shopping experience at our store!
