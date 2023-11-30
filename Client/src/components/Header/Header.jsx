@@ -24,7 +24,7 @@ function Header() {
         {/* LOGO */}
         <div className="header-logo">
           <Link to="/">
-            <img src="../images/LogoUmilux.png" alt="Umilux" />
+            <img src="../images/NotaGLogo.png" alt="NotaG" />
           </Link>
         </div>
 
