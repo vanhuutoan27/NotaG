@@ -1,10 +1,10 @@
-# Umilux - A Whole New World Of Gaming Gears
+# NotaG - A Whole New World Of Gaming Gears
 
-Welcome to Umilux, where you can find top-notch technology products at reasonable prices. We take pride in offering you the latest and highest-quality tech products from renowned brands.
+Welcome to NotaG, where you can find top-notch technology products at reasonable prices. We take pride in offering you the latest and highest-quality tech products from renowned brands.
 
 ## Products
 
-At Umilux, we provide a range of tech products, including:
+At NotaG, we provide a range of tech products, including:
 
 - Mobile phones and tablets
 - Laptops and desktop computers
