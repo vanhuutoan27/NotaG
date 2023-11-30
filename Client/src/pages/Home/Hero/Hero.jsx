@@ -54,6 +54,108 @@ function Hero() {
                 <span>Computer & Laptop</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
+              <ul className="hero-sub-menu-item">
+                <div className="hero-sub-menu-row">
+                  <div className="hero-sub-menu-col">
+                    <h4>Laptop & Computers</h4>
+                    <li>
+                      <Link to="#!">Computers</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Desktops & Monitors</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Hard Drives & Memory Cards</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Printers & Ink</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Networking & Internet Devices</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Computer Accessories</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Software Computers</Link>
+                    </li>
+
+                    <h4>Cameras</h4>
+                    <li>
+                      <Link to="#!">Digital Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Professional & SLR Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Camcorders & Video Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Camera Lenses & Accessories</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">CCTV Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Other Accessories</Link>
+                    </li>
+                  </div>
+
+                  <div className="hero-sub-menu-col">
+                    <h4>Home Audio</h4>
+                    <li>
+                      <Link to="#!">Wireless Audio</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Premium Audio</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Stereo Systems Components</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Headphones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Speakers</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Projectors And Screens</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Turntables</Link>
+                    </li>
+
+                    <h4>Laptop & Computers</h4>
+                    <li>
+                      <Link to="#!">Computers</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Desktops & Monitors</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Hard Drives & Memory Cards</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Printers & Ink</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Networking & Internet Devices</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Computer Accessories</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Software Computers</Link>
+                    </li>
+                  </div>
+
+                  <div className="hero-sub-menu-col">
+                    <Link to="#!">
+                      <img src="../images/hero-sub-menu-item-1.png" alt="" />
+                    </Link>
+                  </div>
+                </div>
+              </ul>
             </li>
             <li className="hero-menu-item">
               <Link to="#!">
@@ -61,6 +163,102 @@ function Hero() {
                 <span>Tablets & iPad</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
+              <ul className="hero-sub-menu-item">
+                <div className="hero-sub-menu-row">
+                  <div className="hero-sub-menu-col">
+                    <h4>Cameras</h4>
+                    <li>
+                      <Link to="#!">Digital Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Professional & SLR Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Camcorders & Video Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Camera Lenses & Accessories</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">CCTV Cameras</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Other Accessories</Link>
+                    </li>
+
+                    <h4>Home Audio</h4>
+                    <li>
+                      <Link to="#!">Wireless Audio</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Premium Audio</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Stereo Systems Components</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Headphones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Speakers</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Projectors And Screens</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Turntables</Link>
+                    </li>
+                  </div>
+
+                  <div className="hero-sub-menu-col">
+                    <h4>Smartphone</h4>
+                    <li>
+                      <Link to="#!">Carrier Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Unlocked Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Phone & Cellphone</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Cellphone Charges</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Your Video Library</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Watch Anywhere</Link>
+                    </li>
+
+                    <h4>Smartphone</h4>
+                    <li>
+                      <Link to="#!">Carrier Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Unlocked Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Phone & Cellphone</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Cellphone Charges</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Your Video Library</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Watch Anywhere</Link>
+                    </li>
+                  </div>
+
+                  <div className="hero-sub-menu-col">
+                    <Link to="#!">
+                      <img src="../images/hero-sub-menu-item-2.png" alt="" />
+                    </Link>
+                  </div>
+                </div>
+              </ul>
             </li>
             <li className="hero-menu-item">
               <Link to="#!">
@@ -68,6 +266,33 @@ function Hero() {
                 <span>Printer & Cameras</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
+              <ul className="hero-sub-menu-item">
+                <div className="hero-sub-menu-row">
+                  <div className="hero-sub-menu-col">
+                    <li>
+                      <Link to="#!">Computers</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Desktops & Monitors</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Hard Drives & Memory Cards</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Printers & Ink</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Networking & Internet Devices</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Computer Accessories</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Software Computers</Link>
+                    </li>
+                  </div>
+                </div>
+              </ul>
             </li>
             <li className="hero-menu-item">
               <Link to="#!">
@@ -75,6 +300,30 @@ function Hero() {
                 <span>Smart Phones</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
+              <ul className="hero-sub-menu-item">
+                <div className="hero-sub-menu-row">
+                  <div className="hero-sub-menu-col">
+                    <li>
+                      <Link to="#!">Carrier Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Unlocked Phones</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Phone & Cellphone</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Cellphone Charges</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Your Video Library</Link>
+                    </li>
+                    <li>
+                      <Link to="#!">Watch Anywhere</Link>
+                    </li>
+                  </div>
+                </div>
+              </ul>
             </li>
             <li className="hero-menu-item">
               <Link to="#!">

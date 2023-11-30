@@ -28,6 +28,8 @@
           position: relative;
           padding: 0 30px;
           transition: all 0.2s ease-in-out;
+          z-index: 999;
+          font-weight: 500;
 
           a {
             display: flex;
@@ -51,8 +53,68 @@
             transform: scale(1.05);
           }
 
-          &:active {
-            transform: scale(1);
+          ul.hero-sub-menu-item {
+            display: none;
+            position: absolute;
+            top: -10px;
+            left: 270px;
+            background: $white;
+            border-radius: 16px;
+            padding: 8px 0;
+
+            .hero-sub-menu-row {
+              display: flex;
+              justify-content: space-between;
+
+              .hero-sub-menu-col {
+                padding: 8px 30px;
+                width: 270px;
+
+                h4 {
+                  color: $blue;
+                  padding: 4px 0;
+                  font-size: 14px;
+                  cursor: default;
+                  margin-top: 8px;
+                }
+
+                li {
+                  display: block;
+
+                  a {
+                    font-size: 13px;
+                    color: $black;
+                    border-bottom: none;
+                    padding: 6px 0;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                      color: $blue;
+                      opacity: 0.7;
+                      transform: translateX(8px);
+                    }
+                  }
+                }
+
+                a {
+                  border-bottom: none;
+
+                  img {
+                    width: 100%;
+                    // width: 300px;
+                    border-radius: 16px;
+                  }
+                }
+
+                &:nth-of-type(3) {
+                  width: 350px;
+                }
+              }
+            }
+          }
+
+          &:hover ul.hero-sub-menu-item {
+            display: block;
           }
         }
 
@@ -67,10 +129,11 @@
       min-height: 478px;
 
       .swiper {
-        position: relative;
         width: 100%;
         height: 478px;
         border-radius: 16px;
+        position: relative;
+        z-index: 1;
 
         img,
         video {

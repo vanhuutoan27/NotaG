@@ -1,9 +1,9 @@
 -- Tạo cơ sở dữ liệu
-CREATE DATABASE UmiluxDB;
+CREATE DATABASE NotaGDB;
 GO
 
 -- Sử dụng cơ sở dữ liệu
-USE UmiluxDB;
+USE NotaGDB;
 GO
 
 -- Bảng người dùng

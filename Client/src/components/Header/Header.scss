@@ -13,10 +13,6 @@
       color: $blue;
       transform: scale(1.05);
     }
-
-    &:active {
-      transform: scale(1);
-    }
   }
 
   .header-container {
@@ -241,10 +237,6 @@
             &:hover {
               color: $blue;
               transform: scale(1.05);
-            }
-
-            &:active {
-              transform: scale(1);
             }
           }
         }
