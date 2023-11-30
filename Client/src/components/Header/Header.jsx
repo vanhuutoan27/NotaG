@@ -129,9 +129,6 @@ function Header() {
               <li>
                 <Link to="#!">Sale</Link>
               </li>
-              <li>
-                <Link to="#!">Buy Umilux</Link>
-              </li>
             </ul>
           </div>
 

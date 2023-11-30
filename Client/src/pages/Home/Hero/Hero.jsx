@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 import { HiDesktopComputer } from 'react-icons/hi';
 import { HiOutlineDeviceTablet } from 'react-icons/hi';
@@ -22,11 +25,19 @@ import './Hero.scss';
 
 function Hero() {
   const swiperParams = {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
+    modules: [Autoplay, EffectFade, Pagination],
+    speed: 500,
     loop: true,
+    effect: 'fade',
     autoplay: {
-      delay: 3000,
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    fadeEffect: {
+      crossFade: true,
+    },
+    pagination: {
+      clickable: true,
     },
   };
 
@@ -107,8 +118,18 @@ function Hero() {
           <Swiper {...swiperParams}>
             {data.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div>
-                  <img src={slide.image} alt={slide.heading} />
+                <div className="swiper">
+                  {slide.image.endsWith('.mp4') ? (
+                    <video autoPlay playsInline="true" loop="loop" muted="muted" preload="metadata">
+                      <source src={slide.image} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={slide.image} alt={slide.heading} />
+                  )}
+                  <div className="swiper-container">
+                    <h4 className="swiper-title">{slide.title}</h4>
+                    <h2 className="swiper-heading">{slide.heading}</h2>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
