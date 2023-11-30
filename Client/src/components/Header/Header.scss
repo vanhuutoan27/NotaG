@@ -225,12 +225,17 @@
           li {
             display: inline-block;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0;
             transition: all 0.2s ease-in-out;
 
             a {
               padding: 0 12px;
+
+              .header-more-icon {
+                margin-bottom: -2px;
+                margin-left: 2px;
+              }
             }
 
             &:hover {

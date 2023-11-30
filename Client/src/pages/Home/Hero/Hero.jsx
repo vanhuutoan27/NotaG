@@ -45,66 +45,66 @@ function Hero() {
     <div className="hero-wrapper">
       <div className="hero-container content">
         <div className="hero-left">
-          <ul>
-            <li>
+          <ul className="hero-menu">
+            <li className="hero-menu-item">
               <Link to="#!">
                 <HiDesktopComputer className="hero-icon" />
                 <span>Computer & Laptop</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <HiOutlineDeviceTablet className="hero-icon" />
                 <span>Tablets & iPad</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <HiOutlinePrinter className="hero-icon" />
                 <span>Printer & Cameras</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <SlScreenSmartphone className="hero-icon" />
                 <span>Smart Phones</span>
                 <FaAngleRight className="hero-icon-more" />
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <MdOutlineKeyboardAlt className="hero-icon" />
                 <span>Keyboard & Mouse</span>
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <CgGames className="hero-icon" />
                 <span>Video Games</span>
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <MdOutlineSportsSoccer className="hero-icon" />
                 <span>Sports & Outdoors</span>
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <BsSmartwatch className="hero-icon" />
                 <span>Smart Watch</span>
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <FaHeadphones className="hero-icon" />
                 <span>Headphone & Audios</span>
               </Link>
             </li>
-            <li>
+            <li className="hero-menu-item">
               <Link to="#!">
                 <HiOutlineDotsCircleHorizontal className="hero-icon" />
                 <span>All Categories</span>

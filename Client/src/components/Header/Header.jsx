@@ -8,6 +8,7 @@ import { IoPersonOutline } from 'react-icons/io5';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { BsCart2 } from 'react-icons/bs';
 import { MdAccessTime } from 'react-icons/md';
+import { FaAngleDown } from 'react-icons/fa6';
 
 import './Header.scss';
 
@@ -112,19 +113,29 @@ function Header() {
           <div className="header-categories">
             <ul>
               <li>
-                <Link to="#!">Home</Link>
+                <Link to="#!">
+                  Home <FaAngleDown className="header-more-icon" />
+                </Link>
               </li>
               <li>
-                <Link to="#!">Shop</Link>
+                <Link to="#!">
+                  Shop <FaAngleDown className="header-more-icon" />
+                </Link>
               </li>
               <li>
-                <Link to="#!">Product</Link>
+                <Link to="#!">
+                  Product <FaAngleDown className="header-more-icon" />
+                </Link>
               </li>
               <li>
-                <Link to="#!">Blog</Link>
+                <Link to="#!">
+                  Blog <FaAngleDown className="header-more-icon" />
+                </Link>
               </li>
               <li>
-                <Link to="#!">Page</Link>
+                <Link to="#!">
+                  Page <FaAngleDown className="header-more-icon" />
+                </Link>
               </li>
               <li>
                 <Link to="#!">Sale</Link>
