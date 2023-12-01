@@ -1,0 +1,110 @@
+@import '../../../App.scss';
+
+.trending-wrapper {
+  .trending-container {
+    padding-top: 40px;
+
+    .trending-heading {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        font-size: 14px;
+        transition: all 0.2s ease-in-out;
+
+        .trending-icon {
+          margin-bottom: -2px;
+        }
+
+        &:hover {
+          color: $blue;
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    .trending-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 30px;
+
+      .trending-item {
+        width: 20%;
+        background: $white;
+        border-radius: 16px;
+        padding: 20px;
+
+        a {
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        img {
+          width: 100%;
+          border-radius: 16px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+
+        .trending-item-info {
+          padding: 15px 0 20px 0;
+
+          .trending-title {
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 4px;
+          }
+
+          .trending-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+          }
+
+          .trending-rating {
+            display: flex;
+            margin-bottom: 8px;
+
+            .star {
+              color: #d3d3d3;
+              margin-right: 4px;
+
+              &.filled {
+                color: #ffc107;
+              }
+            }
+          }
+
+          .trending-price {
+            display: flex;
+
+            .trending-new-price {
+              font-size: 18px;
+              font-weight: 600;
+              margin-right: 4px;
+
+              &.discounted {
+                color: $blue;
+              }
+            }
+
+            .trending-old-price {
+              font-size: 18px;
+              font-weight: 600;
+              text-decoration: line-through;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

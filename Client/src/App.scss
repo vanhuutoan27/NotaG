@@ -16,6 +16,7 @@ $text: #555;
 
 body {
   background: $lightBlue;
+  overflow-x: hidden;
 }
 
 a {
@@ -31,7 +32,7 @@ li {
 .primaryText {
   color: $black;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 36.4px;
 }
 
@@ -71,6 +72,15 @@ li {
     color: darken($white, 1%);
     box-shadow: 0 0 0px 4px rgba(19, 65, 205, 0.5);
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue;
+  border-radius: 12px;
 }
 
 // Media Queries

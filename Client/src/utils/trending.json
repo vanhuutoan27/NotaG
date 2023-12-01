@@ -1,0 +1,47 @@
+[
+  {
+    "link": "#!",
+    "name": "Apple iPhone 13 Mini 5G 128GB Pink - Unlocked",
+    "image1": "../images/trending-item-1-1.jpg",
+    "image2": "../images/trending-item-1-2.jpg",
+    "oldPrice": "$55.00",
+    "newPrice": "",
+    "rating": 4
+  },
+  {
+    "link": "#!",
+    "name": "Apple Watch Aluminum Case - Pride Edition",
+    "image1": "../images/trending-item-2-1.jpg",
+    "image2": "../images/trending-item-2-2.jpg",
+    "oldPrice": "$156.00",
+    "newPrice": "",
+    "rating": 4
+  },
+  {
+    "link": "#!",
+    "name": "Apple Watch Aluminum Case - Pride Edition",
+    "image1": "../images/trending-item-3-1.jpg",
+    "image2": "../images/trending-item-3-2.jpg",
+    "oldPrice": "$136.00",
+    "newPrice": "$126.00",
+    "rating": 3
+  },
+  {
+    "link": "#!",
+    "name": "Apple iPad Mini 6 Wi-Fi Cellular 64GB/128GB",
+    "image1": "../images/trending-item-4-1.jpg",
+    "image2": "../images/trending-item-4-2.jpg",
+    "oldPrice": "$231.00",
+    "newPrice": "",
+    "rating": 2
+  },
+  {
+    "link": "#!",
+    "name": "Samsung Galaxy S21 FE 8GB/128GB - White",
+    "image1": "../images/trending-item-5-1.jpg",
+    "image2": "../images/trending-item-5-2.jpg",
+    "oldPrice": "$150.00",
+    "newPrice": "",
+    "rating": 3
+  }
+]

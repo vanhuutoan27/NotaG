@@ -1,7 +1,7 @@
 @import '../../../App.scss';
 
 .hero-wrapper {
-  .hero-container-top {
+  .hero-container {
     display: flex;
     gap: 30px;
     position: relative;
@@ -189,50 +189,6 @@
       }
     }
   }
-
-  .hero-container-bottom {
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-
-    .hero-left,
-    .hero-middle,
-    .hero-right {
-      position: relative;
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .hero-bottom-text {
-      width: 50%;
-      position: absolute;
-      top: 24%;
-      left: 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: $white;
-
-      h4 {
-        margin-bottom: 20px;
-      }
-
-      span {
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-decoration: underline;
-      }
-    }
-  }
 }
 
 // Media Queries
@@ -241,7 +197,7 @@
 
 @media screen and (max-width: 1024px) {
   .hero-wrapper {
-    .hero-container-top {
+    .hero-container {
       .hero-left {
         display: none;
       }
@@ -250,38 +206,12 @@
         width: 100%;
       }
     }
-
-    .hero-container-bottom {
-      flex-direction: column;
-
-      .hero-left,
-      .hero-middle,
-      .hero-right {
-        &:hover {
-          transform: scale(1);
-        }
-      }
-
-      .hero-bottom-text {
-        h4 {
-          font-size: 40px;
-          margin-bottom: 24px;
-        }
-
-        span {
-          font-size: 24px;
-        }
-      }
-    }
   }
 }
 
 @media (max-width: 768px) {
   .hero-wrapper {
-    .hero-container-top {
-      .hero-left {
-      }
-
+    .hero-container {
       .hero-right {
         .swiper {
           .swiper-container {
@@ -306,10 +236,7 @@
 
 @media (max-width: 640px) {
   .hero-wrapper {
-    .hero-container-top {
-      .hero-left {
-      }
-
+    .hero-container {
       .hero-right {
         .swiper {
           .swiper-container {

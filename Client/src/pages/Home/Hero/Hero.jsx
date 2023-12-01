@@ -20,7 +20,7 @@ import { FaAngleRight } from 'react-icons/fa6';
 import { FaMinus } from 'react-icons/fa6';
 import { IoIosAdd } from 'react-icons/io';
 
-import data from '../../../utils/heroSliders.json';
+import data from '../../../utils/hero.json';
 import './Hero.scss';
 
 function Hero() {
@@ -43,9 +43,9 @@ function Hero() {
 
   return (
     <div className="hero-wrapper">
-      {/* HERO TOP */}
-      <div className="hero-container-top content">
-        {/* HERO TOP LEFT */}
+      {/* HERO  */}
+      <div className="hero-container content">
+        {/* HERO LEFT */}
         <div className="hero-left">
           <ul className="hero-menu">
             <li className="hero-menu-item">
@@ -365,14 +365,14 @@ function Hero() {
           </ul>
         </div>
 
-        {/* HERO TOP RIGHT */}
+        {/* HERO RIGHT */}
         <div className="hero-right">
           <Swiper {...swiperParams}>
             {data.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="swiper">
                   {slide.image.endsWith('.mp4') ? (
-                    <video autoPlay playsInline="true" loop="loop" muted="muted" preload="metadata">
+                    <video autoPlay playsInline={true} loop="loop" muted="muted" preload="metadata">
                       <source src={slide.image} type="video/mp4" />
                     </video>
                   ) : (
@@ -386,51 +386,6 @@ function Hero() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
-
-      {/* HERO BOTTOM */}
-      <div className="hero-container-bottom content">
-        {/* HERO BOTTOM LEFT */}
-        <div className="hero-left">
-          <Link to="#!">
-            <img src="../images/hero-bottom-left.png" alt="" />
-            <div className="hero-bottom-text">
-              <h4>
-                Surface <br />
-                Save Up To $569
-              </h4>
-              <span>Shop Surface</span>
-            </div>
-          </Link>
-        </div>
-
-        {/* HERO BOTTOM MIDDLE */}
-        <div className="hero-middle">
-          <Link to="#!">
-            <img src="../images/hero-bottom-middle.png" alt="" />
-            <div className="hero-bottom-text">
-              <h4>
-                Gamepad <br />
-                Save Up To $69
-              </h4>
-              <span>Shop Deals</span>
-            </div>
-          </Link>
-        </div>
-
-        {/* HERO BOTTOM RIGHT */}
-        <div className="hero-right">
-          <Link to="#!">
-            <img src="../images/hero-bottom-right.png" alt="" />
-            <div className="hero-bottom-text">
-              <h4>
-                Cameras <br />
-                Save Up To $159
-              </h4>
-              <span>Shop Camera</span>
-            </div>
-          </Link>
         </div>
       </div>
     </div>
