@@ -10,6 +10,7 @@
 
       a {
         font-size: 14px;
+        margin-top: 12px;
         transition: all 0.2s ease-in-out;
 
         .trending-icon {
@@ -25,13 +26,11 @@
 
     .trending-content {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
       padding-top: 30px;
 
       .trending-item {
-        width: 20%;
+        position: relative;
+        width: 100%;
         background: $white;
         border-radius: 16px;
         padding: 20px;
@@ -44,13 +43,39 @@
           }
         }
 
-        img {
+        .image-container {
+          position: relative;
           width: 100%;
-          border-radius: 16px;
-          transition: all 0.2s ease-in-out;
+          height: 0;
+          padding-top: 100%;
+          overflow: hidden;
 
-          &:hover {
-            transform: scale(1.05);
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in;
+
+            &:first-child {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+            &:last-child {
+              opacity: 0;
+              transform: scale(1.05);
+            }
+          }
+
+          &:hover img:last-child {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+
+          &:hover img:first-child {
+            opacity: 0;
           }
         }
 
@@ -64,6 +89,7 @@
           }
 
           .trending-name {
+            min-height: 40px;
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 4px;
@@ -107,4 +133,17 @@
       }
     }
   }
+}
+
+// Media Queries
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 640px) {
 }

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import { LuChevronsRight } from 'react-icons/lu';
 import { FaStar } from 'react-icons/fa';
@@ -23,6 +26,23 @@ function Trending() {
     return stars;
   };
 
+  const swiperSettings = {
+    speed: 500,
+    sliderPerView: 2,
+    spaceBetween: 20,
+    breakpoints: {
+      400: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    },
+  };
+
   return (
     <div className="trending-wrapper">
       <div className="trending-container content">
@@ -36,31 +56,33 @@ function Trending() {
 
         {/* TRENDING CONTENT */}
         <div className="trending-content">
-          {data.map((item, index) => (
-            <div className="trending-item" key={index}>
-              <Link to={item.link}>
-                <img
-                  src={hoveredImage === index ? item.image2 : item.image1}
-                  alt={item.name}
-                  onMouseEnter={() => setHoveredImage(index)}
-                  onMouseLeave={() => setHoveredImage(null)}
-                />
-              </Link>
-              <div className="trending-item-info">
-                <h5 className="trending-title">NOTAG</h5>
-                <h4 className="trending-name">
-                  <Link to={item.link}>{item.name}</Link>
-                </h4>
-                <div className="trending-rating">{generateStars(item.rating)}</div>
-                <div className="trending-price">
-                  <h3 className={`trending-new-price ${item.newPrice ? 'discounted' : ''}`}>
-                    {item.newPrice || item.oldPrice}
-                  </h3>
-                  {item.newPrice && <h3 className="trending-old-price">{item.oldPrice}</h3>}
+          <Swiper {...swiperSettings}>
+            {data.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="trending-item">
+                  <Link to={item.link}>
+                    <div className="image-container">
+                      <img src={item.image1} alt={item.name} />
+                      <img src={item.image2} alt={item.name} />
+                    </div>
+                  </Link>
+                  <div className="trending-item-info">
+                    <h5 className="trending-title">NOTAG</h5>
+                    <h4 className="trending-name">
+                      <Link to={item.link}>{item.name}</Link>
+                    </h4>
+                    <div className="trending-rating">{generateStars(item.rating)}</div>
+                    <div className="trending-price">
+                      <h3 className={`trending-new-price ${item.newPrice ? 'discounted' : ''}`}>
+                        {item.newPrice || item.oldPrice}
+                      </h3>
+                      {item.newPrice && <h3 className="trending-old-price">{item.oldPrice}</h3>}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>
