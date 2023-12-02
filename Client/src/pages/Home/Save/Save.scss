@@ -10,17 +10,21 @@
     .save-left,
     .save-middle,
     .save-right {
+      border-radius: $radius;
       position: relative;
-      transition: all 0.2s ease-in-out;
+      overflow: hidden;
 
-      &:hover {
+      &:hover img {
         transform: scale(1.05);
       }
     }
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
+      border-radius: inherit;
+      transition: $transition;
     }
 
     .save-text {

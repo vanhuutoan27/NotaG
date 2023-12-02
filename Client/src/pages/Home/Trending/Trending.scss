@@ -11,7 +11,7 @@
       a {
         font-size: 14px;
         margin-top: 12px;
-        transition: all 0.2s ease-in-out;
+        transition: $transition;
 
         .trending-icon {
           margin-bottom: -2px;
@@ -32,11 +32,11 @@
         position: relative;
         width: 100%;
         background: $white;
-        border-radius: 16px;
+        border-radius: $radius;
         padding: 20px;
 
         a {
-          transition: all 0.2s ease-in-out;
+          transition: $transition;
 
           &:hover {
             color: $blue;
@@ -56,7 +56,7 @@
             left: 0;
             width: 100%;
             height: auto;
-            border-radius: 16px;
+            border-radius: $radius;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in;
 
             &:first-child {
@@ -115,7 +115,7 @@
             .trending-new-price {
               font-size: 18px;
               font-weight: 600;
-              margin-right: 4px;
+              margin-right: 8px;
 
               &.discounted {
                 color: $blue;

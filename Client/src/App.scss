@@ -4,6 +4,9 @@ $white: #fff;
 $lightBlue: #f1f3f7;
 $black: #111;
 $text: #555;
+$radius: 16px;
+$transition: all 0.2s ease-in-out;
+$transform: transform 0.2s ease-in-out;
 
 // Base Styles
 * {
@@ -58,9 +61,9 @@ li {
   color: $white;
   border: none;
   outline: none;
-  border-radius: 16px;
+  border-radius: $radius;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: $transition;
 
   &:hover {
     background: lighten($blue, 10%);

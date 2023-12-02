@@ -28,7 +28,6 @@ function Trending() {
 
   const swiperSettings = {
     speed: 500,
-    sliderPerView: 2,
     spaceBetween: 20,
     breakpoints: {
       400: {
