@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
@@ -15,15 +15,24 @@ import { CgGames } from 'react-icons/cg';
 import { MdOutlineSportsSoccer } from 'react-icons/md';
 import { BsSmartwatch } from 'react-icons/bs';
 import { FaHeadphones } from 'react-icons/fa6';
+import { TbDeviceImacHeart } from 'react-icons/tb';
 import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi';
 import { FaAngleRight } from 'react-icons/fa6';
+import { IoMdAdd } from 'react-icons/io';
 import { FaMinus } from 'react-icons/fa6';
-import { IoIosAdd } from 'react-icons/io';
 
 import data from '../../../utils/hero.json';
 import './Hero.scss';
 
 function Hero() {
+  const [allCategories, setAllCategories] = useState(null);
+
+  const handleAllCategoriesClick = () => {
+    setAllCategories((prevActive) => {
+      return prevActive !== 'TopSellingProducts' ? 'TopSellingProducts' : 'AllCategories';
+    });
+  };
+
   const swiperParams = {
     modules: [Autoplay, EffectFade, Pagination],
     speed: 500,
@@ -355,11 +364,25 @@ function Hero() {
                 <span>Headphone & Audios</span>
               </Link>
             </li>
-            <li className="hero-menu-item">
+            <li
+              className={`hero-menu-item ${
+                allCategories === 'TopSellingProducts' ? 'active' : 'inactive'
+              }`}
+            >
               <Link to="#!">
+                <TbDeviceImacHeart className="hero-icon" />
+                <span>Top Selling Products</span>
+              </Link>
+            </li>
+            <li className={'hero-menu-item'}>
+              <Link onClick={handleAllCategoriesClick}>
                 <HiOutlineDotsCircleHorizontal className="hero-icon" />
                 <span>All Categories</span>
-                <IoIosAdd className="hero-icon" />
+                {allCategories === 'TopSellingProducts' ? (
+                  <FaMinus className="hero-icon" />
+                ) : (
+                  <IoMdAdd className="hero-icon" />
+                )}
               </Link>
             </li>
           </ul>

@@ -25,6 +25,7 @@
       display: flex;
       align-items: center;
       display: none;
+      margin: 10px 12px 0 0;
     }
 
     .header-logo {
@@ -186,6 +187,7 @@
   }
 
   .header-all-menu {
+    position: relative;
     padding: 0 30px;
 
     .header-all-menu-container {
@@ -195,7 +197,7 @@
 
       > div {
         flex: 1;
-        padding: 16px 12px;
+        padding: 16px 0;
       }
 
       .header-icon {
@@ -207,10 +209,26 @@
         font-size: 14px;
         font-weight: 600;
       }
+      .header-menu,
+      .header-recent {
+        transition: $transition;
+
+        .header-menu-icon {
+          font-size: 20px;
+          margin: 0 12px 0 0;
+          cursor: pointer;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
 
       .header-menu {
         display: flex;
         justify-content: flex-start;
+        cursor: pointer;
+        user-select: none;
       }
 
       .header-categories {
@@ -227,12 +245,7 @@
             transition: $transition;
 
             a {
-              padding: 0 12px;
-
-              .header-more-icon {
-                margin-bottom: -2px;
-                margin-left: 2px;
-              }
+              padding: 0 20px;
             }
 
             &:hover {
@@ -246,16 +259,131 @@
       .header-recent {
         display: flex;
         justify-content: flex-end;
-        transition: $transition;
+      }
+    }
 
-        .header-menu-icon {
-          font-size: 20px;
-          margin: 0 12px 0 0;
-          cursor: pointer;
+    .sub-menu {
+      position: absolute;
+      top: 120%;
+      left: 0;
+      display: none;
+      width: 300px;
+      padding: 8px 0;
+      background: $white;
+      border-radius: $radius;
+      z-index: 999;
+
+      ul.sub-menu-menu {
+        li.sub-menu-menu-item {
+          position: relative;
+          font-weight: 500;
+          padding: 0 30px;
+          transition: $transition;
+          z-index: 999;
+
+          .sub-menu-icon {
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 12px 0;
+            border-bottom: 2px solid #eee;
+
+            span {
+              margin-left: 20px;
+              margin-right: auto;
+            }
+
+            .sub-menu-icon-more {
+              font-size: 14px;
+            }
+          }
+
+          &:hover {
+            color: $blue;
+            transform: scale(1.05);
+          }
+
+          ul.sub-menu-sub-menu-item {
+            display: none;
+            position: absolute;
+            top: -7px;
+            left: 293px;
+            background: $white;
+            border-radius: $radius;
+            padding: 8px 0;
+
+            .sub-menu-sub-menu-row {
+              display: flex;
+              justify-content: space-between;
+
+              .sub-menu-sub-menu-col {
+                padding: 8px 30px;
+                width: 370px;
+
+                h4 {
+                  color: $blue;
+                  padding: 4px 0;
+                  font-size: 14px;
+                  cursor: default;
+                  margin-top: 8px;
+                }
+
+                li {
+                  display: block;
+
+                  a {
+                    font-size: 13px;
+                    color: $black;
+                    border-bottom: none;
+                    padding: 6px 0;
+                    transition: $transition;
+
+                    &:hover {
+                      color: $blue;
+                      opacity: 0.7;
+                      transform: translateX(8px);
+                    }
+                  }
+                }
+
+                a {
+                  border-bottom: none;
+
+                  img {
+                    width: 100%;
+                    // width: 300px;
+                    border-radius: $radius;
+                  }
+                }
+
+                &:nth-of-type(3) {
+                  width: 350px;
+                }
+              }
+            }
+          }
+
+          &:hover ul.sub-menu-sub-menu-item {
+            display: block;
+          }
+
+          &.inactive {
+            display: none;
+          }
+
+          &.active {
+            display: block;
+          }
         }
 
-        &:hover {
-          color: $blue;
+        li:last-of-type a {
+          border: none;
         }
       }
     }
@@ -264,6 +392,15 @@
 
 // Media Queries
 @media screen and (max-width: 1280px) {
+  .header-wrapper {
+    .header-all-menu {
+      .sub-menu {
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {

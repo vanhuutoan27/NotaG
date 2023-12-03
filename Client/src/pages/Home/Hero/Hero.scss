@@ -9,20 +9,15 @@
 
     .hero-icon {
       font-size: 20px;
-      transition: $transition;
-
       cursor: pointer;
-    }
-
-    .hero-left,
-    .hero-right {
-      background: $white;
-      border-radius: $radius;
+      transition: $transition;
     }
 
     .hero-left {
       width: 300px;
       padding: 8px 0;
+      background: $white;
+      border-radius: $radius;
 
       ul.hero-menu {
         li.hero-menu-item {
@@ -118,6 +113,14 @@
           &:hover ul.hero-sub-menu-item {
             display: block;
           }
+
+          &.inactive {
+            display: none;
+          }
+
+          &.active {
+            display: block;
+          }
         }
 
         li:last-of-type a {
@@ -129,6 +132,7 @@
     .hero-right {
       width: calc(100% - 300px);
       min-height: 478px;
+      border-radius: $radius;
 
       .swiper {
         width: 100%;
@@ -195,9 +199,6 @@
 
 // Media Queries
 @media screen and (max-width: 1280px) {
-}
-
-@media screen and (max-width: 1024px) {
   .hero-wrapper {
     .hero-container {
       .hero-left {
@@ -209,6 +210,9 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1024px) {
 }
 
 @media (max-width: 768px) {

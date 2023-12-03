@@ -27,6 +27,12 @@
         .footer-icon {
           font-size: 42px;
           color: $blue;
+          cursor: pointer;
+          transition: $transition;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
 
         .item-title {
@@ -45,17 +51,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 30px;
-      margin-top: 60px;
       padding-bottom: 60px;
 
       > .footer-middle-item {
-        flex: 1;
+        flex: 20%;
+        max-width: 30%;
+        margin-top: 60px;
+        padding: 0 30px;
       }
 
       .footer-middle-item:first-of-type,
       .footer-middle-item:last-of-type {
-        flex: 2;
+        flex: 35%;
       }
 
       .footer-middle-item {
@@ -83,6 +90,15 @@
           color: $blue;
           font-size: 30px;
           font-weight: 600;
+        }
+
+        p:nth-of-type(4) {
+          font-weight: 600;
+          transition: $transition;
+
+          &:hover {
+            color: $blue;
+          }
         }
 
         ul {
@@ -118,7 +134,8 @@
           }
 
           .btn {
-            font-size: 15px;
+            font-size: 14px;
+            padding: 12px 24px;
           }
         }
       }
@@ -127,6 +144,16 @@
 }
 // Media Queries
 @media screen and (max-width: 1024px) {
+  .footer-wrapper {
+    .footer-container {
+      .footer-middle {
+        .footer-middle-item {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -152,14 +179,15 @@
         .footer-top-item {
           flex: 0 0 100%;
           max-width: 100%;
-          padding: 0 15px;
           margin-top: 20px;
         }
       }
 
       .footer-middle {
         .footer-middle-item {
-          width: 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
+          margin-top: 20px;
         }
       }
     }
