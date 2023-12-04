@@ -12,8 +12,6 @@ import data from '../../../utils/trending.json';
 import './Trending.scss';
 
 function Trending() {
-  const [hoveredImage, setHoveredImage] = useState(null);
-
   const generateStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

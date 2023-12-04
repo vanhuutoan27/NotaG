@@ -6,7 +6,7 @@
     "image2": "../images/trending-item-1-2.jpg",
     "oldPrice": "$55.00",
     "newPrice": "",
-    "rating": 4
+    "rating": 5
   },
   {
     "link": "#!",
@@ -15,7 +15,7 @@
     "image2": "../images/trending-item-2-2.jpg",
     "oldPrice": "$156.00",
     "newPrice": "",
-    "rating": 4
+    "rating": 5
   },
   {
     "link": "#!",
@@ -24,7 +24,7 @@
     "image2": "../images/trending-item-3-2.jpg",
     "oldPrice": "$136.00",
     "newPrice": "$126.00",
-    "rating": 3
+    "rating": 5
   },
   {
     "link": "#!",
@@ -33,7 +33,7 @@
     "image2": "../images/trending-item-4-2.jpg",
     "oldPrice": "$231.00",
     "newPrice": "",
-    "rating": 2
+    "rating": 5
   },
   {
     "link": "#!",
@@ -42,6 +42,6 @@
     "image2": "../images/trending-item-5-2.jpg",
     "oldPrice": "$150.00",
     "newPrice": "",
-    "rating": 3
+    "rating": 5
   }
 ]

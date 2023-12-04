@@ -1,0 +1,56 @@
+[
+  {
+    "link": "#!",
+    "name": "Galaxy S21 Ultra 5G 128GB Unlocked International Version",
+    "image1": "../images/top-rated-item-1_1.jpg",
+    "image2": "../images/top-rated-item-1_2.jpg",
+    "oldPrice": "$136.00",
+    "newPrice": "$126.00",
+    "rating": 5
+  },
+  {
+    "link": "#!",
+    "name": "Apple Watch Aluminum Case - Pride Edition",
+    "image1": "../images/top-rated-item-2_1.jpg",
+    "image2": "../images/top-rated-item-2_2.jpg",
+    "oldPrice": "$126.00",
+    "newPrice": "",
+    "rating": 5
+  },
+  {
+    "link": "#!",
+    "name": "Apple iPad Pro M1 11-inch 2021 Wi-Fi 128GB-Space Gray",
+    "image1": "../images/top-rated-item-3_1.jpg",
+    "image2": "../images/top-rated-item-3_2.jpg",
+    "oldPrice": "$85.00",
+    "newPrice": "$68.00",
+    "rating": 5
+  },
+  {
+    "link": "#!",
+    "name": "Samsung Galaxy S21 FE 8GB/128GB - White",
+    "image1": "../images/top-rated-item-4_1.jpg",
+    "image2": "../images/top-rated-item-4_2.jpg",
+    "oldPrice": "$150.00",
+    "newPrice": "",
+    "rating": 5
+  },
+  {
+    "link": "#!",
+    "name": "Samsung Galaxy S22 Plus 5G 8GB/128GB - Unlocked",
+    "image1": "../images/top-rated-item-5_1.jpg",
+    "image2": "../images/top-rated-item-5_2.jpg",
+    "oldPrice": "$75.00",
+    "newPrice": "$60.00",
+    "rating": 5
+  },
+  {
+    "link": "#!",
+    "name": "Apple iPhone 13 Mini 5G 128GB Pink - Unlocked",
+    "image1": "../images/top-rated-item-6_1.jpg",
+    "image2": "../images/top-rated-item-6_2.jpg",
+    "oldPrice": "$55.00",
+    "newPrice": "$55.00",
+    "rating": 5
+  }
+]

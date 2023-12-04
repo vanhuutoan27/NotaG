@@ -1,0 +1,149 @@
+@import '../../../App.scss';
+
+.top-rated-wrapper {
+  .top-rated-container {
+    padding-top: 40px;
+
+    .top-rated-heading {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        font-size: 14px;
+        margin-top: 12px;
+        transition: $transition;
+
+        .top-rated-icon {
+          margin-bottom: -2px;
+        }
+
+        &:hover {
+          color: $blue;
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    .top-rated-content {
+      width: 100%;
+      padding-top: 30px;
+
+      .top-rated-item {
+        position: relative;
+        width: 100%;
+        background: $white;
+        border-radius: $radius;
+        padding: 20px;
+
+        a {
+          transition: $transition;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        .image-container {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-top: 100%;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            border-radius: $radius;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in;
+
+            &:first-child {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+            &:last-child {
+              opacity: 0;
+              transform: scale(1.05);
+            }
+          }
+
+          &:hover img:last-child {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+
+          &:hover img:first-child {
+            opacity: 0;
+          }
+        }
+
+        .top-rated-item-info {
+          padding: 15px 0 20px 0;
+
+          .top-rated-title {
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 4px;
+          }
+
+          .top-rated-name {
+            min-height: 60px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+          }
+
+          .top-rated-rating {
+            display: flex;
+            margin-bottom: 8px;
+
+            .star {
+              color: #d3d3d3;
+              margin-right: 4px;
+
+              &.filled {
+                color: #ffc107;
+              }
+            }
+          }
+
+          .top-rated-price {
+            display: flex;
+
+            .top-rated-new-price {
+              font-size: 18px;
+              font-weight: 600;
+              margin-right: 8px;
+
+              &.discounted {
+                color: $blue;
+              }
+            }
+
+            .top-rated-old-price {
+              font-size: 18px;
+              font-weight: 600;
+              text-decoration: line-through;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 640px) {
+}
