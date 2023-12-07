@@ -2,48 +2,52 @@
 
 .deal-wrapper {
   .deal-container {
-    display: flex;
-    gap: 30px;
     padding-top: 40px;
 
-    .deal-item {
-      width: calc(100% / 3);
-      background: $white;
-      border-radius: $radius;
-      overflow: hidden;
+    .deal-content {
+      display: flex;
+      gap: 30px;
+      padding-top: 30px;
 
-      img {
-        width: 100%;
-        border-top-left-radius: $radius;
-        border-top-right-radius: $radius;
-        transition: $transition;
+      .deal-item {
+        width: calc(100% / 3);
+        background: $white;
+        border-radius: $radius;
+        overflow: hidden;
 
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
+        img {
+          width: 100%;
+          border-top-left-radius: $radius;
+          border-top-right-radius: $radius;
+          transition: $transition;
 
-      .deal-info {
-        margin-top: 20px;
-        padding: 0 30px 30px 30px;
-
-        .deal-title {
-          font-size: 16px;
-          font-weight: 600;
-          margin-bottom: 12px;
-
-          a {
-            transition: $transition;
-
-            &:hover {
-              color: $blue;
-            }
+          &:hover {
+            transform: scale(1.05);
           }
         }
 
-        .deal-desc {
-          color: $text;
-          font-size: 14px;
+        .deal-info {
+          margin-top: 20px;
+          padding: 0 30px 30px 30px;
+
+          .deal-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+
+            a {
+              transition: $transition;
+
+              &:hover {
+                color: $blue;
+              }
+            }
+          }
+
+          .deal-desc {
+            color: $text;
+            font-size: 14px;
+          }
         }
       }
     }
@@ -60,10 +64,12 @@
 @media (max-width: 768px) {
   .deal-wrapper {
     .deal-container {
-      flex-direction: column;
+      .deal-content {
+        flex-direction: column;
 
-      .deal-item {
-        width: 100%;
+        .deal-item {
+          width: 100%;
+        }
       }
     }
   }

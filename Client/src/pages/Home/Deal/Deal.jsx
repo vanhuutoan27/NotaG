@@ -27,19 +27,27 @@ function Deal() {
   return (
     <div className="deal-wrapper">
       <div className="deal-container content">
-        {deals.map((deal, index) => (
-          <div className="deal-item" key={index}>
-            <Link to={deal.link}>
-              <img src={deal.image} alt={deal.title} />
-            </Link>
-            <div className="deal-info">
-              <h3 className="deal-title">
-                <Link to={deal.link}>{deal.title}</Link>
-              </h3>
-              <p className="deal-desc">{deal.desc}</p>
+        {/* DEAL HEADING */}
+        <div className="trending-heading">
+          <h3 className="primaryText">Deals & Promotions</h3>
+        </div>
+
+        {/* DEAL CONTENT */}
+        <div className="deal-content">
+          {deals.map((deal, index) => (
+            <div className="deal-item" key={index}>
+              <Link to={deal.link}>
+                <img src={deal.image} alt={deal.title} />
+              </Link>
+              <div className="deal-info">
+                <h3 className="deal-title">
+                  <Link to={deal.link}>{deal.title}</Link>
+                </h3>
+                <p className="deal-desc">{deal.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

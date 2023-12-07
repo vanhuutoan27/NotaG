@@ -1,0 +1,70 @@
+@import '../../../App.scss';
+
+.collection-wrapper {
+  .collection-container {
+    padding-top: 40px;
+
+    .collection-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-top: 30px;
+
+      .collection-item {
+        display: flex;
+        background: $white;
+        padding: 20px;
+        border-radius: $radius;
+
+        .collection-left {
+          flex: 1;
+          margin-right: 8px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .collection-right {
+          flex: 2;
+
+          h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+
+          ul {
+            li {
+              font-size: 13px;
+              color: $text;
+              margin-bottom: 4px;
+              transition: $transition;
+
+              &:hover {
+                color: $blue;
+                transform: translateX(8px);
+                opacity: 0.7;
+              }
+            }
+          }
+
+          h2.all-link {
+            font-size: 14px;
+            font-weight: 500;
+            color: $blue;
+            margin-top: 20px;
+            transition: $transition;
+
+            &:hover {
+              transform: translateX(8px);
+            }
+
+            .all-link-icon {
+              margin-bottom: -2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
