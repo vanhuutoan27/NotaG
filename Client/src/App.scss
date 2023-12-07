@@ -53,6 +53,41 @@ li {
   margin-right: auto;
 }
 
+.pt-40 {
+  padding-top: 40px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.hover1 {
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.hover2 {
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+    opacity: 0.7;
+    transform: translateX(8px);
+  }
+}
+
+.hover3 {
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+    transform: scale(1.05);
+  }
+}
+
 // Button Styles
 .btn {
   font-size: 20px;

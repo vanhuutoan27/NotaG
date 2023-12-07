@@ -47,13 +47,13 @@ function Header() {
       <div className="header-container content">
         {/* MENU MOBILE */}
         <div className="header-menu-mobile">
-          <IoMenu className="header-icon" />
+          <IoMenu className="header-icon hover3" />
         </div>
 
         {/* LOGO */}
         <div className="header-logo">
           <Link to="/">
-            <img src="../images/NotaGLogo.png" alt="NotaG" />
+            <img src="../images/NotaGLogo.png" alt="NotaG" className="hover3" />
           </Link>
         </div>
 
