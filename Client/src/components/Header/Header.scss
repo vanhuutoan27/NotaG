@@ -7,6 +7,12 @@
     margin: 0 12px;
     font-size: 32px;
     transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+      transform: scale(1.05);
+    }
   }
 
   .header-container {
@@ -29,6 +35,10 @@
       img {
         width: 145px;
         transition: $transition;
+
+        &:hover {
+          transform: scale(1.05);
+        }
 
         &:active {
           transform: scale(1);
