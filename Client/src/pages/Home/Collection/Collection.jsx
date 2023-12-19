@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LuChevronsRight } from 'react-icons/lu';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import './Collection.scss';
 
@@ -56,6 +60,23 @@ function Collection() {
     },
   ];
 
+  const swiperSettings = {
+    speed: 500,
+
+    spaceBetween: 20,
+    breakpoints: {
+      400: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  };
+
   return (
     <div className="collection-wrapper">
       <div className="collection-container content">
@@ -66,28 +87,32 @@ function Collection() {
 
         {/* COLLECTION CONTENT */}
         <div className="collection-content">
-          {data.map((item, itemIndex) => (
-            <div className="collection-item" key={item.title + itemIndex}>
-              <div className="collection-left">
-                <img src={item.image} alt={item.title} />
-              </div>
-              <div className="collection-right">
-                <h3>{item.title}</h3>
-                <ul>
-                  {item.products.map((product, productIndex) => (
-                    <li key={product.name + productIndex}>
-                      <Link to={product.link}>{product.name}</Link>
-                    </li>
-                  ))}
-                </ul>
-                <h2 className="all-link">
-                  <Link to={item.link}>
-                    {item.linkText} <LuChevronsRight className="all-link-icon" />
-                  </Link>
-                </h2>
-              </div>
-            </div>
-          ))}
+          <Swiper {...swiperSettings}>
+            {data.map((item, itemIndex) => (
+              <SwiperSlide key={itemIndex}>
+                <div className="collection-item" key={item.title + itemIndex}>
+                  <div className="collection-left">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                  <div className="collection-right">
+                    <h3>{item.title}</h3>
+                    <ul>
+                      {item.products.map((product, productIndex) => (
+                        <li key={product.name + productIndex}>
+                          <Link to={product.link}>{product.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <h2 className="all-link">
+                      <Link to={item.link}>
+                        {item.linkText} <LuChevronsRight className="all-link-icon" />
+                      </Link>
+                    </h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>

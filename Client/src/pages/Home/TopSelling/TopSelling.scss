@@ -240,7 +240,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .top-selling-wrapper {
     .top-selling-container {
       .sale-container {
@@ -270,7 +270,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .top-selling-wrapper {
     .top-selling-container {
       .sale-container {
@@ -281,7 +281,7 @@
           }
 
           span {
-            font-size: 12px;
+            display: none;
           }
         }
       }

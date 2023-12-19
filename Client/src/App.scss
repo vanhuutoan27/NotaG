@@ -123,7 +123,10 @@ li {
 }
 
 // Media Queries
-@media (min-width: 640px) {
+@media (max-width: 640px) {
+  .primaryText {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 768px) {
