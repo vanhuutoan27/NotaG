@@ -1,0 +1,350 @@
+@import '../../App.scss';
+
+.product-wrapper {
+  .product-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 14px;
+
+    .product-section {
+      padding: 40px;
+    }
+
+    .product-left,
+    .product-right {
+      background: $white;
+      border-radius: $radius;
+      height: 100%;
+      max-height: 1200px;
+    }
+
+    .product-left {
+      flex: 1.5;
+      min-height: 2000px;
+    }
+
+    .product-right {
+      flex: 1;
+      position: sticky;
+      top: 0;
+
+      .product-name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        min-height: 80px;
+      }
+
+      .product-review {
+        display: flex;
+        justify-content: space-between;
+
+        .star {
+          color: #d3d3d3;
+          margin-right: 2px;
+
+          &.filled {
+            color: #ffc107;
+          }
+        }
+
+        .product-rate {
+          color: $text;
+        }
+
+        .product-sold {
+          color: $blue;
+          font-weight: 500;
+          cursor: pointer;
+
+          .icon {
+            color: red;
+            margin-right: 8px;
+            margin-bottom: -1px;
+          }
+        }
+      }
+
+      .product-price {
+        font-size: 30px;
+        font-weight: 500;
+        padding: 20px 0;
+      }
+
+      .product-view {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        border-bottom: 2px solid #eee;
+
+        .product-view-icon {
+          background: $black;
+          color: $white;
+          padding: 4px 12px;
+          border-radius: 4px;
+
+          .icon {
+            margin-bottom: -2px;
+          }
+        }
+
+        .product-view-desc {
+          font-weight: 500;
+        }
+      }
+
+      .product-size {
+        p {
+          margin: 0 0 8px 4px;
+
+          span {
+            font-weight: 600;
+          }
+        }
+
+        .product-sizes {
+          display: flex;
+          gap: 10px;
+
+          .product-size-item {
+            background: $white;
+            color: $black;
+            font-weight: 500;
+            border: 2px solid #eee;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: $transition;
+            margin-bottom: 28px;
+
+            &:hover,
+            &.active {
+              background: $black;
+              color: $white;
+              font-weight: 600;
+            }
+          }
+        }
+
+        .product-addons {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 24px;
+          margin-bottom: 24px;
+          border-bottom: 2px solid #eee;
+
+          .icon {
+            font-size: 20px;
+            margin-right: 8px;
+          }
+
+          .product-addons-item {
+            transition: $transition;
+
+            a {
+              display: flex;
+            }
+
+            &:hover {
+              color: $blue;
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+
+      .product-quantity {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        border-radius: 40px;
+        overflow: hidden;
+        border: 2px solid #eee;
+        margin-bottom: 16px;
+
+        button,
+        input {
+          background: #f5f5f5;
+          border: none;
+          outline: none;
+          font-size: 16px;
+        }
+
+        button {
+          width: 20%;
+          cursor: pointer;
+
+          .icon {
+            margin-bottom: -2px;
+          }
+        }
+
+        input {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .product-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 16px;
+
+        .product-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 52px;
+          min-height: 52px;
+          background: $white;
+          color: $black;
+          border-radius: 99px;
+          border: 2px solid #eee;
+          cursor: pointer;
+          transition: $transition;
+
+          &:first-child {
+            background: $black;
+            color: $white;
+            width: 100%;
+          }
+
+          &:hover {
+            background: $black;
+            color: $white;
+          }
+
+          .icon {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .product-checkbox {
+      display: flex;
+      margin-bottom: 24px;
+
+      input {
+        width: 20px;
+        margin-right: 12px;
+        cursor: pointer;
+      }
+
+      label {
+        cursor: pointer;
+        user-select: none;
+
+        a {
+          font-weight: 500;
+          text-decoration: underline;
+          transition: $transition;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+
+    .product-buttons-buy {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+
+      .product-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 52px;
+        min-height: 52px;
+        width: 100%;
+        border-radius: 99px;
+        border: 2px solid #eee;
+        cursor: pointer;
+        transition: $transition;
+
+        &:first-child {
+          background: lighten(#ffc520, 10%);
+          color: #253b80;
+          font-weight: 600;
+
+          &.disabled {
+            background: #ffc520;
+            pointer-events: none;
+          }
+        }
+
+        &:last-child {
+          background: lighten($black, 10%);
+          color: $white;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.disabled {
+            background: $black;
+            pointer-events: none;
+          }
+        }
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .product-delivery-return {
+      margin-top: 24px;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #eee;
+
+      .product-delivery,
+      .product-return {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .icon {
+          font-size: 32px;
+          min-width: 60px;
+          margin-left: -16px;
+        }
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .product-meta {
+      display: flex;
+      gap: 20px;
+
+      ul {
+        li {
+          a {
+            transition: $transition;
+
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+
+        &:last-child {
+          li {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

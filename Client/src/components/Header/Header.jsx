@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { Badge } from 'antd';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -28,11 +28,34 @@ import { FaMinus } from 'react-icons/fa6';
 import './Header.scss';
 
 function Header() {
+  const location = useLocation();
+
   const [allCategories, setAllCategories] = useState(null);
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const handleAllSubMenuClick = () => {
-    setIsSubMenuVisible((prevVisible) => !prevVisible);
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const toggleSubMenu = () => {
+    if (!(windowWidth >= 1280 && location.pathname === '/')) {
+      setIsSubMenuVisible((prevVisible) => !prevVisible);
+    }
+  };
+
+  const closeSubMenu = () => {
+    if (isSubMenuVisible) {
+      setIsSubMenuVisible(false);
+    }
   };
 
   const handleAllCategoriesClick = () => {
@@ -133,7 +156,7 @@ function Header() {
       {/* ALL MENU */}
       <div className="header-all-menu content">
         <div className="header-all-menu-container ">
-          <div className="header-menu" onClick={handleAllSubMenuClick}>
+          <div className="header-menu" onClick={toggleSubMenu}>
             <IoMenu className="header-menu-icon" />
             <h3>All Departments</h3>
           </div>
@@ -172,11 +195,7 @@ function Header() {
         </div>
 
         {/* ALL SUB MENU */}
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setIsSubMenuVisible(false);
-          }}
-        >
+        <OutsideClickHandler onOutsideClick={closeSubMenu}>
           <div className={`sub-menu ${isSubMenuVisible ? 'show' : ''}`}>
             <ul className="sub-menu-menu">
               <li className="sub-menu-menu-item">
