@@ -170,7 +170,7 @@ function Header() {
                 <Link to="#!">Shop</Link>
               </li>
               <li>
-                <Link to="#!">Product</Link>
+                <Link to="/product">Product</Link>
               </li>
               <li>
                 <Link to="#!">Blog</Link>
