@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from 'antd';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -10,17 +10,17 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { BsCart2 } from 'react-icons/bs';
 import { MdAccessTime } from 'react-icons/md';
 
-import { HiDesktopComputer } from 'react-icons/hi';
-import { HiOutlineDeviceTablet } from 'react-icons/hi';
-import { HiOutlinePrinter } from 'react-icons/hi';
-import { SlScreenSmartphone } from 'react-icons/sl';
-import { MdOutlineKeyboardAlt } from 'react-icons/md';
-import { CgGames } from 'react-icons/cg';
-import { MdOutlineSportsSoccer } from 'react-icons/md';
-import { BsSmartwatch } from 'react-icons/bs';
-import { FaHeadphones } from 'react-icons/fa6';
-import { TbDeviceImacHeart } from 'react-icons/tb';
-import { HiOutlineDotsCircleHorizontal } from 'react-icons/hi';
+import { MdOutlineLaptopMac } from 'react-icons/md';
+import { IoIosTabletPortrait } from 'react-icons/io';
+import { IoPhonePortraitOutline } from 'react-icons/io5';
+import { TbDeviceWatch } from 'react-icons/tb';
+import { TbDeviceAirpods } from 'react-icons/tb';
+import { HiMiniComputerDesktop } from 'react-icons/hi2';
+import { GrGamepad } from 'react-icons/gr';
+import { FaApple } from 'react-icons/fa';
+import { BiSupport } from 'react-icons/bi';
+import { CgMoreAlt } from 'react-icons/cg';
+import { CgMoreO } from 'react-icons/cg';
 import { FaAngleRight } from 'react-icons/fa6';
 import { IoMdAdd } from 'react-icons/io';
 import { FaMinus } from 'react-icons/fa6';
@@ -28,41 +28,34 @@ import { FaMinus } from 'react-icons/fa6';
 import './Header.scss';
 
 function Header() {
-  const location = useLocation();
-
   const [allCategories, setAllCategories] = useState(null);
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [scrollY, setScrollY] = useState(0);
 
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  const handleResize = () => setWindowWidth(window.innerWidth);
+  const handleScroll = () => setScrollY(window.scrollY);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const toggleSubMenu = () => {
-    if (!(windowWidth >= 1280 && location.pathname === '/')) {
-      setIsSubMenuVisible((prevVisible) => !prevVisible);
-    }
+    const shouldToggle =
+      scrollY > window.innerHeight * 0.8 || (windowWidth <= 1280 && location.pathname === '/');
+    setIsSubMenuVisible(shouldToggle ? !isSubMenuVisible : isSubMenuVisible);
   };
 
-  const closeSubMenu = () => {
-    if (isSubMenuVisible) {
-      setIsSubMenuVisible(false);
-    }
-  };
+  const closeSubMenu = () => isSubMenuVisible && setIsSubMenuVisible(false);
 
-  const handleAllCategoriesClick = () => {
-    setAllCategories((prevActive) => {
-      return prevActive !== 'TopSellingProducts' ? 'TopSellingProducts' : 'AllCategories';
-    });
-  };
+  const handleAllCategoriesClick = () =>
+    setAllCategories((prev) => (prev !== 'moreMore' ? 'moreMore' : 'AllCategories'));
 
   return (
     <div className="header-wrapper">
@@ -200,207 +193,159 @@ function Header() {
             <ul className="sub-menu-menu">
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <HiDesktopComputer className="sub-menu-icon" />
-                  <span>Computer & Laptop</span>
+                  <MdOutlineLaptopMac className="sub-menu-icon" />
+                  <span>Mac</span>
                   <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
                 <ul className="sub-menu-sub-menu-item">
                   <div className="sub-menu-sub-menu-row">
                     <div className="sub-menu-sub-menu-col">
-                      <h4>Laptop & Computers</h4>
+                      {/* MacBook Air */}
+                      <h4>MacBook Air</h4>
                       <li>
-                        <Link to="#!">Computers</Link>
+                        <Link to="#!">MacBook Air 13 Inch Chip M1</Link>
                       </li>
                       <li>
-                        <Link to="#!">Desktops & Monitors</Link>
+                        <Link to="#!">MacBook Air 13 Inch Chip M2</Link>
                       </li>
                       <li>
-                        <Link to="#!">Hard Drives & Memory Cards</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Printers & Ink</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Networking & Internet Devices</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Computer Accessories</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Software Computers</Link>
+                        <Link to="#!">MacBook Air 15 Inch Chip M2</Link>
                       </li>
 
-                      <h4>Cameras</h4>
+                      {/* MacBook Pro */}
+                      <h4>MacBook Pro</h4>
                       <li>
-                        <Link to="#!">Digital Cameras</Link>
+                        <Link to="#!">MacBook Pro 14 Inch Chip M3</Link>
                       </li>
                       <li>
-                        <Link to="#!">Professional & SLR Cameras</Link>
+                        <Link to="#!">MacBook Pro 14 Inch Chip M3 Pro</Link>
                       </li>
                       <li>
-                        <Link to="#!">Camcorders & Video Cameras</Link>
+                        <Link to="#!">MacBook Pro 14 Inch Chip M3 Max</Link>
                       </li>
                       <li>
-                        <Link to="#!">Camera Lenses & Accessories</Link>
+                        <Link to="#!">MacBook Pro 16 Inch Chip M3 Pro</Link>
                       </li>
                       <li>
-                        <Link to="#!">CCTV Cameras</Link>
+                        <Link to="#!">MacBook Pro 16 Inch Chip M3 Max</Link>
+                      </li>
+
+                      {/* iMac */}
+                      <h4>iMac</h4>
+                      <li>
+                        <Link to="#!">iMac 8 Core CPU, 8 Core GPU, 256GB</Link>
                       </li>
                       <li>
-                        <Link to="#!">Other Accessories</Link>
+                        <Link to="#!">iMac 8 Core CPU, 10 Core GPU, 256GB</Link>
+                      </li>
+                      <li>
+                        <Link to="#!">iMac 8 Core CPU, 10 Core GPU, 512GB</Link>
                       </li>
                     </div>
+
                     <div className="sub-menu-sub-menu-col">
-                      <h4>Home Audio</h4>
+                      {/* Mac Mini */}
+                      <h4>Mac Mini</h4>
                       <li>
-                        <Link to="#!">Wireless Audio</Link>
+                        <Link to="#!">Mac Mini 8 Core CPU, 10 Core GPU, 8GB, 256GB</Link>
                       </li>
                       <li>
-                        <Link to="#!">Premium Audio</Link>
+                        <Link to="#!">Mac Mini 8 Core CPU, 10 Core GPU, 8GB, 512GB</Link>
                       </li>
                       <li>
-                        <Link to="#!">Stereo Systems Components</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Headphones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Speakers</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Projectors And Screens</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Turntables</Link>
+                        <Link to="#!">Mac Mini 10 Core CPU, 16 Core GPU, 16GB, 512GB</Link>
                       </li>
 
-                      <h4>Laptop & Computers</h4>
+                      {/* Mac Studio */}
+                      <h4>Mac Studio</h4>
                       <li>
-                        <Link to="#!">Computers</Link>
+                        <Link to="#!">
+                          Mac Studio 12 Core CPU, 30 Core GPU, 16 Core Neural Engine
+                        </Link>
                       </li>
                       <li>
-                        <Link to="#!">Desktops & Monitors</Link>
+                        <Link to="#!">
+                          Mac Studio 24 Core CPU, 60 Core GPU, 32 Core Neural Engine
+                        </Link>
+                      </li>
+
+                      {/* Mac Pro */}
+                      <h4>Mac Pro</h4>
+                      <li>
+                        <Link to="#!">Mac Pro Vertical Tower Form</Link>
                       </li>
                       <li>
-                        <Link to="#!">Hard Drives & Memory Cards</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Printers & Ink</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Networking & Internet Devices</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Computer Accessories</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Software Computers</Link>
+                        <Link to="#!">Mac Pro Horizontal Barrel Form</Link>
                       </li>
                     </div>
+
+                    <div className="sub-menu-sub-menu-col">
+                      {/* Display */}
+                      <h4>Display</h4>
+                      <li>
+                        <Link to="#!">Studio Display</Link>
+                      </li>
+                      <li>
+                        <Link to="#!">Pro Display XDR</Link>
+                      </li>
+                    </div>
+
+                    {/* <div className="sub-menu-sub-menu-col">
+                    <Link to="#!">
+                      <img src="../images/sub-menu-sub-menu-item-1.png" alt="" />
+                    </Link>
+                  </div> */}
                   </div>
                 </ul>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <HiOutlineDeviceTablet className="sub-menu-icon" />
-                  <span>Tablets & iPad</span>
+                  <IoIosTabletPortrait className="sub-menu-icon" />
+                  <span>iPad</span>
                   <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
                 <ul className="sub-menu-sub-menu-item">
                   <div className="sub-menu-sub-menu-row">
                     <div className="sub-menu-sub-menu-col">
-                      <h4>Cameras</h4>
+                      <h4>iPad Pro</h4>
                       <li>
-                        <Link to="#!">Digital Cameras</Link>
+                        <Link to="#!">iPad Pro 11 Inch, Liquid Retina Display</Link>
                       </li>
                       <li>
-                        <Link to="#!">Professional & SLR Cameras</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Camcorders & Video Cameras</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Camera Lenses & Accessories</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">CCTV Cameras</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Other Accessories</Link>
+                        <Link to="#!">iPad Pro 12.9 Inch, Liquid Retina XDR Display</Link>
                       </li>
 
-                      <h4>Home Audio</h4>
+                      <h4>iPad Air</h4>
                       <li>
-                        <Link to="#!">Wireless Audio</Link>
+                        <Link to="#!">iPad Air 10.9 Inch, Liquid Retina Display</Link>
+                      </li>
+
+                      <h4>iPad</h4>
+                      <li>
+                        <Link to="#!">iPad 10th Generation, 10.9 Inch, Liquid Retina Display</Link>
                       </li>
                       <li>
-                        <Link to="#!">Premium Audio</Link>
+                        <Link to="#!">iPad 9th Generation, 10.2 Inch, Retina Display</Link>
                       </li>
+
+                      <h4>iPad Mini</h4>
                       <li>
-                        <Link to="#!">Stereo Systems Components</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Headphones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Speakers</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Projectors And Screens</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Turntables</Link>
+                        <Link to="#!">iPad Mini 8.3 Inch, Liquid Retina Display</Link>
                       </li>
                     </div>
 
-                    <div className="sub-menu-sub-menu-col">
-                      <h4>Smartphone</h4>
-                      <li>
-                        <Link to="#!">Carrier Phones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Unlocked Phones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Phone & Cellphone</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Cellphone Charges</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Your Video Library</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Watch Anywhere</Link>
-                      </li>
-
-                      <h4>Smartphone</h4>
-                      <li>
-                        <Link to="#!">Carrier Phones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Unlocked Phones</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Phone & Cellphone</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Cellphone Charges</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Your Video Library</Link>
-                      </li>
-                      <li>
-                        <Link to="#!">Watch Anywhere</Link>
-                      </li>
-                    </div>
+                    {/* <div className="sub-menu-sub-menu-col">
+                    <Link to="#!">
+                      <img src="../images/sub-menu-sub-menu-item-2.png" alt="" />
+                    </Link>
+                  </div> */}
                   </div>
                 </ul>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <HiOutlinePrinter className="sub-menu-icon" />
-                  <span>Printer & Cameras</span>
+                  <IoPhonePortraitOutline className="sub-menu-icon" />
+                  <span>iPhone</span>
                   <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
                 <ul className="sub-menu-sub-menu-item">
@@ -433,8 +378,8 @@ function Header() {
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <SlScreenSmartphone className="sub-menu-icon" />
-                  <span>Smart Phones</span>
+                  <TbDeviceWatch className="sub-menu-icon" />
+                  <span>Watch</span>
                   <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
                 <ul className="sub-menu-sub-menu-item">
@@ -464,49 +409,53 @@ function Header() {
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <MdOutlineKeyboardAlt className="sub-menu-icon" />
-                  <span>Keyboard & Mouse</span>
+                  <TbDeviceAirpods className="sub-menu-icon" />
+                  <span>AirPods</span>
+                  <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <CgGames className="sub-menu-icon" />
-                  <span>Video Games</span>
+                  <HiMiniComputerDesktop className="sub-menu-icon" />
+                  <span>TV & Home</span>
+                  <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <MdOutlineSportsSoccer className="sub-menu-icon" />
-                  <span>Sports & Outdoors</span>
+                  <GrGamepad className="sub-menu-icon" />
+                  <span>Entertainment</span>
+                  <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <BsSmartwatch className="sub-menu-icon" />
-                  <span>Smart Watch</span>
+                  <FaApple className="sub-menu-icon" />
+                  <span>Accessories</span>
+                  <FaAngleRight className="sub-menu-icon-more" />
                 </Link>
               </li>
               <li className="sub-menu-menu-item">
                 <Link to="#!">
-                  <FaHeadphones className="sub-menu-icon" />
-                  <span>Headphone & Audios</span>
+                  <BiSupport className="sub-menu-icon" />
+                  <span>Support</span>
                 </Link>
               </li>
               <li
                 className={`sub-menu-menu-item ${
-                  allCategories === 'TopSellingProducts' ? 'active' : 'inactive'
+                  allCategories === 'moreMore' ? 'active' : 'inactive'
                 }`}
               >
                 <Link to="#!">
-                  <TbDeviceImacHeart className="sub-menu-icon" />
-                  <span>Top Selling Products</span>
+                  <CgMoreAlt className="sub-menu-icon" />
+                  <span>More...</span>
                 </Link>
               </li>
               <li className={'sub-menu-menu-item'}>
                 <Link onClick={handleAllCategoriesClick}>
-                  <HiOutlineDotsCircleHorizontal className="sub-menu-icon" />
+                  <CgMoreO className="sub-menu-icon" />
                   <span>All Categories</span>
-                  {allCategories === 'TopSellingProducts' ? (
+                  {allCategories === 'moreMore' ? (
                     <FaMinus className="sub-menu-icon" />
                   ) : (
                     <IoMdAdd className="sub-menu-icon" />
@@ -515,6 +464,7 @@ function Header() {
               </li>
             </ul>
           </div>
+          <div className={`overlay ${isSubMenuVisible ? 'show' : ''}`} onClick={closeSubMenu}></div>
         </OutsideClickHandler>
       </div>
     </div>

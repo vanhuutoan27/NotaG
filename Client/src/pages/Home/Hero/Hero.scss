@@ -5,7 +5,7 @@
     display: flex;
     gap: 30px;
     position: relative;
-    padding-top: 40px;
+    padding-top: 30px;
 
     .hero-icon {
       font-size: 20px;
@@ -65,7 +65,7 @@
 
               .hero-sub-menu-col {
                 padding: 8px 30px;
-                width: 270px;
+                width: 320px;
 
                 h4 {
                   color: $blue;
@@ -103,8 +103,12 @@
                   }
                 }
 
-                &:nth-of-type(3) {
-                  width: 350px;
+                &:last-of-type {
+                  width: 420px;
+                }
+
+                &:nth-child(3) {
+                  width: 220px;
                 }
               }
             }
